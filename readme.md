@@ -1,84 +1,197 @@
-# 🍕 Sistema de Pizzaria - Versão Estudantil
+# Sistema de Pizzaria
 
-Sistema simples de gestão de pizzaria em TypeScript.
+Sistema de gerenciamento para pizzarias desenvolvido em TypeScript com interface de linha de comando.
 
-## 🚀 Como usar
+## 📋 Funcionalidades
 
-### 1. Instalar dependências
-```bash
-npm install
+- **Gestão de Clientes**: Cadastro, listagem e busca de clientes
+- **Gestão de Produtos**: Catálogo de produtos com categorias
+- **Gestão de Pedidos**: Criação de pedidos com cálculo automático
+- **Sistema de Promoções**: Aplicação automática de descontos
+- **Comprovantes**: Geração automática de comprovantes em TXT
+- **Relatórios**: Análise de vendas e dados
+
+## 🏗️ Arquitetura
+
+O sistema segue uma arquitetura em camadas:
+
+```
+┌─────────────────┐
+│   Controllers   │ ← Interface com usuário
+├─────────────────┤
+│    Services     │ ← Lógica de negócio
+├─────────────────┤
+│     Models      │ ← Entidades de dados
+├─────────────────┤
+│     Utils       │ ← Utilitários
+└─────────────────┘
 ```
 
-### 2. Compilar
+## 🚀 Instalação
+
+### Pré-requisitos
+- Node.js (versão 14+)
+- npm
+
+### Passos
+
+1. **Clone o repositório**
+   ```bash
+   git clone [url-do-repositorio]
+   cd sistema-pizzaria
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Compile o projeto**
+   ```bash
+   npm run build
+   ```
+
+4. **Execute a aplicação**
+   ```bash
+   npm start
+   ```
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── controllers/          # Controladores
+│   ├── ClienteController.ts
+│   ├── ProdutoController.ts
+│   ├── PedidoController.ts
+│   └── RelatorioController.ts
+├── models/              # Modelos de dados
+│   ├── Cliente.ts
+│   ├── Produto.ts
+│   ├── Pedido.ts
+│   └── Promocao.ts
+├── services/            # Serviços de negócio
+│   ├── ClienteService.ts
+│   ├── ProdutoService.ts
+│   ├── PedidoService.ts
+│   └── PromocaoService.ts
+├── utils/               # Utilitários
+│   ├── CSVManager.ts
+│   ├── IDManager.ts
+│   └── ComprovanteGenerator.ts
+├── views/               # Interface
+│   └── MenuPrincipal.ts
+└── index.ts            # Arquivo principal
+
+data/                   # Dados persistentes
+├── clientes.csv
+├── produtos.csv
+├── pedidos.csv
+└── promocoes.csv
+```
+
+## 🛠️ Scripts Disponíveis
+
+- `npm run build` - Compila TypeScript para JavaScript
+- `npm start` - Executa a aplicação
+- `npm run dev` - Executa em modo desenvolvimento
+- `npm test` - Executa os testes
+
+## 📊 Tecnologias Utilizadas
+
+- **TypeScript** - Linguagem de programação
+- **Node.js** - Runtime JavaScript
+- **CSV** - Persistência de dados
+- **readline-sync** - Interface de linha de comando
+
+## 💾 Persistência de Dados
+
+O sistema utiliza arquivos CSV para armazenamento:
+- `clientes.csv` - Dados dos clientes
+- `produtos.csv` - Catálogo de produtos
+- `pedidos.csv` - Histórico de pedidos
+- `promocoes.csv` - Promoções ativas
+
+## 🎯 Como Usar
+
+1. **Inicie o sistema**
+   ```bash
+   npm start
+   ```
+
+2. **Navegue pelo menu**
+   - Gerenciar Clientes
+   - Gerenciar Produtos
+   - Gerenciar Pedidos
+   - Relatórios
+
+3. **Crie um pedido**
+   - Selecione o cliente
+   - Adicione produtos
+   - Escolha entrega ou retirada
+   - Confirme o pedido
+
+4. **Comprovante gerado automaticamente**
+   - Salvo na área de trabalho
+   - Formato: `comprovante_pedido_[ID]_[data].txt`
+
+## 🔧 Configuração
+
+O sistema está configurado para funcionar imediatamente após a instalação. Não são necessárias configurações adicionais.
+
+### Personalização
+- Nome da pizzaria: Edite `ComprovanteGenerator.ts`
+- Dados de contato: Modifique as constantes no gerador de comprovantes
+
+## 📈 Funcionalidades Avançadas
+
+### Sistema de Promoções
+- Desconto por valor mínimo
+- Promoções em produtos específicos
+- Aplicação automática durante o pedido
+
+### Relatórios
+- Vendas por período
+- Produtos mais vendidos
+- Análise de clientes
+
+### Validações
+- Email válido
+- CEP com 8 dígitos
+- Preços positivos
+- Campos obrigatórios
+
+## 🐛 Solução de Problemas
+
+### Erro de compilação
 ```bash
 npm run build
 ```
 
-### 3. Sistema zerado
-O sistema está zerado e pronto para você configurar manualmente.
+### Dados não carregam
+- Verifique se os arquivos CSV existem em `data/`
+- Verifique a formatação dos arquivos
 
-## 📁 Estrutura
+### Comprovante não é gerado
+- Verifique permissões na área de trabalho
+- Confirme se o pedido foi salvo
 
-```
-src/
-├── models/          # Cliente, Produto, Pedido
-├── utils/           # IDManager, ComprovanteGenerator
-└── index.ts         # Arquivo principal
+## 📚 Documentação
 
-data/                # Dados em CSV
-├── clientes.csv
-├── produtos.csv
-└── pedidos.csv
-```
+- [Manual de Utilização](docs/manual.md) - Guia completo de uso
+- [Diagramas](docs/diagrams.md) - Diagramas explicativos
 
-## ⚙️ Funcionalidades
+## 🤝 Contribuição
 
-- ✅ IDs sequenciais (1, 2, 3...)
-- ✅ Gerenciamento de clientes
-- ✅ Gerenciamento de produtos
-- ✅ Criação de pedidos
-- ✅ Comprovante automático
-- ✅ Salvamento em CSV
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
 
-## 🎯 Scripts
+## 📄 Licença
 
-- `npm run build` - Compila TypeScript
-- `npm start` - Executa o sistema
-- `node verificar_sistema.js` - Verifica se está funcionando
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## 📝 Como adicionar dados
-
-```javascript
-// Adicionar cliente
-ClienteModel.adicionar({
-    nome: 'Nome',
-    email: 'email@teste.com',
-    telefone: '(11) 99999-9999',
-    endereco: { rua: 'Rua', numero: '123', bairro: 'Bairro', cidade: 'Cidade', cep: '01234-567' },
-    ativo: true
-});
-
-// Adicionar produto
-ProdutoModel.adicionar({
-    nome: 'Pizza Margherita',
-    descricao: 'Pizza com molho e mussarela',
-    categoria: 'pizza',
-    preco: 35.90,
-    disponivel: true
-});
-
-// Criar pedido
-PedidoModel.adicionar({
-    clienteId: '1',
-    itens: [{ produtoId: '1', quantidade: 1, precoUnitario: 35.90 }],
-    status: 'pendente',
-    formaPagamento: 'dinheiro',
-    subtotal: 35.90,
-    desconto: 0,
-    taxaEntrega: 5.00,
-    total: 40.90
-});
-```
-
-
+## 👥 Autores
 
