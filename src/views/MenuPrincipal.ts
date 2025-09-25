@@ -1,6 +1,7 @@
 import { ClienteController } from '../controllers/ClienteController';
 import { ProdutoController } from '../controllers/ProdutoController';
 import { PedidoController } from '../controllers/PedidoController';
+import { PromocaoController } from '../controllers/PromocaoController';
 import { PromocaoService } from '../services/PromocaoService';
 
 export class MenuPrincipal {
@@ -13,8 +14,9 @@ export class MenuPrincipal {
     console.log('\n1. Gerenciar Clientes');
     console.log('2. Gerenciar Produtos');
     console.log('3. Gerenciar Pedidos');
-    console.log('4. Relatórios de Vendas');
-    console.log('5. Sair');
+    console.log('4. Gerenciar Promoções');
+    console.log('5. Relatórios de Vendas');
+    console.log('6. Sair');
     console.log('\n' + '='.repeat(50));
   }
 
@@ -56,6 +58,19 @@ export class MenuPrincipal {
     console.log('\n' + '='.repeat(30));
   }
 
+  static exibirMenuPromocoes(): void {
+    console.log('\n' + '='.repeat(30));
+    console.log('GERENCIAR PROMOÇÕES');
+    console.log('='.repeat(30));
+    console.log('\n1. Cadastrar Promoção');
+    console.log('2. Listar Promoções');
+    console.log('3. Listar Promoções Ativas');
+    console.log('4. Buscar Promoção');
+    console.log('5. Ativar/Desativar Promoção');
+    console.log('6. Voltar ao Menu Principal');
+    console.log('\n' + '='.repeat(30));
+  }
+
   static exibirMenuRelatorios(): void {
     console.log('\n' + '='.repeat(30));
     console.log('RELATÓRIOS DE VENDAS');
@@ -87,9 +102,12 @@ export class MenuPrincipal {
           this.executarMenuPedidos();
           break;
         case '4':
-          this.executarMenuRelatorios();
+          this.executarMenuPromocoes();
           break;
         case '5':
+          this.executarMenuRelatorios();
+          break;
+        case '6':
           console.log('\nObrigado por usar o Sistema de Pizzaria!');
           executando = false;
           break;
@@ -204,6 +222,46 @@ export class MenuPrincipal {
           PedidoController.atualizarStatusPedido();
           break;
         case '4':
+          executando = false;
+          break;
+        default:
+          console.log('\n❌ Opção inválida. Tente novamente.');
+      }
+
+      if (executando) {
+        this.readline.question('\nPressione Enter para continuar...');
+      }
+    }
+  }
+
+  private static executarMenuPromocoes(): void {
+    let executando = true;
+
+    while (executando) {
+      this.exibirMenuPromocoes();
+      const opcao = this.readline.question('Escolha uma opção: ');
+
+      switch (opcao) {
+        case '1':
+          try {
+            PromocaoController.cadastrarPromocao();
+          } catch (error) {
+            // Erro já foi tratado no controller
+          }
+          break;
+        case '2':
+          PromocaoController.listarPromocoes();
+          break;
+        case '3':
+          PromocaoController.listarPromocoesAtivas();
+          break;
+        case '4':
+          PromocaoController.buscarPromocao();
+          break;
+        case '5':
+          PromocaoController.ativarDesativarPromocao();
+          break;
+        case '6':
           executando = false;
           break;
         default:
