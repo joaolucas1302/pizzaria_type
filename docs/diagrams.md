@@ -20,53 +20,7 @@ Este documento contém os diagramas explicativos do sistema de gerenciamento de 
   Dados   Histórico  Preços  Categorias  Pagamento Relatórios
 ```
 
-## 2. Fluxo de Criação de Pedido
-
-```
-INÍCIO
-  |
-  ▼
-Selecionar Cliente
-  |
-  ▼
-Cliente existe?
-  ├─ NÃO → Cadastrar Cliente
-  └─ SIM → Continuar
-  |
-  ▼
-Listar Produtos Disponíveis
-  |
-  ▼
-Adicionar Itens ao Pedido
-  |
-  ▼
-Escolher Forma de Pagamento
-  |
-  ▼
-Tipo de Entrega?
-  ├─ ENTREGA → Usar endereço do cliente OU informar novo
-  └─ RETIRADA → Balcão
-  |
-  ▼
-Aplicar Promoções Disponíveis
-  |
-  ▼
-Calcular Total Final
-  |
-  ▼
-Confirmar Pedido
-  |
-  ▼
-Salvar Pedido
-  |
-  ▼
-Gerar Comprovante
-  |
-  ▼
-FIM
-```
-
-## 3. Arquitetura da Aplicação
+## 2. Arquitetura da Aplicação
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -113,4 +67,4 @@ FIM
 
 
 
-Estes diagramas fornecem uma visão completa da arquitetura e funcionamento do sistema de pizzaria, facilitando o entendimento e a manutenção do código.
+

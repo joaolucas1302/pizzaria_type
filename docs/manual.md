@@ -300,19 +300,3 @@ npm run build
 - Verifique a pasta `data/` para integridade dos arquivos
 - Use `npm run dev` para modo de desenvolvimento
 
-## 12. Considerações Técnicas
-
-### Performance
-- Sistema otimizado para pequenas e médias pizzarias
-- Carregamento em memória para operações rápidas
-- Persistência em CSV para simplicidade
-
-### Segurança
-- Validação de entrada em todos os campos
-- Sanitização de dados antes do armazenamento
-- Controle de acesso via linha de comando
-
-### Manutenibilidade
-- Código estruturado em camadas
-- Separação de responsabilidades
-- Documentação inline no código

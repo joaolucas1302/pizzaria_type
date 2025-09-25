@@ -38,7 +38,7 @@ O sistema segue uma arquitetura em camadas:
 1. **Clone o repositório**
    ```bash
    git clone https://github.com/joaolucas1302/pizzaria_type.git
-   cd sistema-pizzaria
+   cd pizzaria_type
    ```
 
 2. **Instale as dependências**
@@ -184,6 +184,6 @@ npm run build
 
 ## 👥 Autores
 
-Cauã Zavanella da Encarnação
-Gabriel Henrique Lopes Costa
-João Lucas Frangiotti
+- Cauã Zavanella da Encarnação
+- Gabriel Henrique Lopes Costa
+- João Lucas Frangiotti

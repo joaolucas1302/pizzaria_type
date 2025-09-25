@@ -9,7 +9,7 @@ export class ClienteController {
 
     const nome = readline.question('Nome completo: ');
     const email = readline.question('Email: ');
-    const telefone = readline.question('Telefone (formato: 11 99999-9999): ');
+    const telefone = readline.question('Telefone (formato: (11) 99999-9999): ');
 
     console.log('\n--- Endereço ---');
     const rua = readline.question('Rua: ');
