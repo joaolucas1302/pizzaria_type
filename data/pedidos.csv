@@ -1,2 +1,0 @@
-id,clienteId,itens,status,formaPagamento,subtotal,desconto,taxaEntrega,total,observacoes,dataPedido,dataEntrega,enderecoEntrega
-1,1,"[{""produtoId"":""1"",""quantidade"":1,""precoUnitario"":20}]",pendente,dinheiro,20,3,5,22,,"""2025-09-19T00:18:24.426Z""",,"{""rua"":""abc"",""numero"":""1"",""bairro"":""js ab"",""cidade"":""va"",""cep"":""12345-678""}"
