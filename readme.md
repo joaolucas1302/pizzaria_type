@@ -37,7 +37,7 @@ O sistema segue uma arquitetura em camadas:
 
 1. **Clone o repositório**
    ```bash
-   git clone [url-do-repositorio]
+   git clone https://github.com/joaolucas1302/pizzaria_type.git
    cd sistema-pizzaria
    ```
 
