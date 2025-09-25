@@ -111,7 +111,7 @@ export class PromocaoController {
       console.log(`Período: ${dataInicio.toLocaleDateString('pt-BR')} a ${dataFim.toLocaleDateString('pt-BR')}`);
 
     } catch (error) {
-      console.log(`\n❌ Erro ao cadastrar promoção: ${error.message}`);
+      console.log(`\n❌ Erro ao cadastrar promoção: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
     }
   }
 
