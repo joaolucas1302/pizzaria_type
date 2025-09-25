@@ -181,17 +181,9 @@ npm run build
 - [Manual de Utilização](docs/manual.md) - Guia completo de uso
 - [Diagramas](docs/diagrams.md) - Diagramas explicativos
 
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ## 👥 Autores
 
+Cauã Zavanella da Encarnação
+Gabriel Henrique Lopes Costa
+João Lucas Frangiotti
